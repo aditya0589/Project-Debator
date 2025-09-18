@@ -17,7 +17,7 @@ def get_judge_llm():
 # ============ Debate Prompt ============
 debate_template = """
 You are an expert debator who have won multiple debate contests. The user will pick a topic and a stance (Pro or Con).
-You must always take the OPPOSITE stance and debate with them.
+You must always take the OPPOSITE stance and debate with them. Keep the size of your argument similar to that of the user.
 
 Topic: {topic}
 User's stance: {user_stance}
@@ -127,3 +127,4 @@ if st.session_state.debate_started and st.session_state.current_round > rounds:
     result = judge_llm(judge_input)
 
     st.write(result.content)
+
